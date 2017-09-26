@@ -1,15 +1,15 @@
-//
-//  main.cpp
-//  cppDesign
-//
-//  Created by Liangchuan Gu on 26/09/2017.
-//  Copyright © 2017 Liangchuan Gu. All rights reserved.
-//
+#include <gtest/gtest.h>
+#include "static_check_app.h"
 
-#include <iostream>
+using namespace RoboK;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+// Tests factorial of 0.
+TEST(StaticCheckTest, safe_reinterpret_cast_success) {
+    char somePointer = '\n';
+    char c = safe_reinterpret_cast<char>(somePointer);
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
